@@ -1,0 +1,12 @@
+body {
+  background-color: black; }
+
+div {
+  color: black;
+  font-size: 24px; }
+body {
+  color: white; }
+
+div > .mobile {
+  color: black;
+  font-size: 24px; }
