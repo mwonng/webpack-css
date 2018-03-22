@@ -1,12 +1,14 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const desktop = new ExtractTextPlugin('./src.desktop');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    desktop: './src/desktop.js',
+    mobile: './src/mobile.js'
+  },
   // mode: 'development',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -19,8 +21,8 @@ module.exports = {
   plugins: [
     // 指定產生檔案名稱與路徑
     new ExtractTextPlugin({
-      filename: 'stylesheet.css'
+      filename: '[name].css'
     }),
-    desktop
+
   ]
 };

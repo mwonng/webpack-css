@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import './desktop.scss';
 import './mobile.scss';
 
 function component() {
