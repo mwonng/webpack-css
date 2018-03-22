@@ -3,19 +3,25 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    desktop: './src/sass/desktop.scss',
-    mobile: './src/sass/mobile.scss'
+    desktop: './src/desktop.js',
+    mobile: './src/mobile.js'
   },
   // mode: 'development',
   output: {
-    // filename: 'bundle.[name].js',
-    // path: path.resolve(__dirname, 'dist')
+    filename: 'bundle.[name].js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     // 加入 Loader
     rules: [{
       test: /\.(scss)$/,
-      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use:[
+          { loader: 'css-loader?-minimize', options: { minimize: true, sourceMap: true } }, 
+          { loader:'sass-loader' }
+        ]
+      })
     }]
   },
   plugins: [
