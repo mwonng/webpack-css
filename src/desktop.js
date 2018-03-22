@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import './desktop.scss';
+import './sass/desktop.scss';
 
 function component() {
   var element = document.createElement('div');

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import './mobile.scss';
+import './sass/mobile.scss';
 
 function component() {
   var element = document.createElement('div');

@@ -3,13 +3,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    desktop: './src/desktop.js',
-    mobile: './src/mobile.js'
+    desktop: './src/sass/desktop.scss',
+    mobile: './src/sass/mobile.scss'
   },
   // mode: 'development',
   output: {
-    filename: 'bundle.[name].js',
-    path: path.resolve(__dirname, 'dist')
+    // filename: 'bundle.[name].js',
+    // path: path.resolve(__dirname, 'dist')
   },
   module: {
     // 加入 Loader
